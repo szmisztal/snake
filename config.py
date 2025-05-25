@@ -1,4 +1,4 @@
-screen_resolution = (720, 480)
+screen_resolution = (480, 320)
 running = True
 red_color = (255, 0, 0)
 white_color = (255, 255, 255)
