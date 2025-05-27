@@ -8,9 +8,10 @@ class GameDrawing:
         self.blue_color = (0, 0, 255)
         self.green_color = (0, 255, 0)
 
-    def screen_draw(self, snake):
+    def screen_draw(self, snake, apple):
         self.screen.fill(self.green_color)
-        for part in snake.snake_parts_position:
+        pygame.draw.circle(self.screen, self.red_color, apple.coordinates, 5)
+        for part in snake.parts_position:
             pygame.draw.rect(self.screen, self.blue_color, pygame.Rect(part[0], part[1], 10, 10))
 
 
