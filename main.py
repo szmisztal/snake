@@ -24,12 +24,12 @@ while running == True:
                 snake.movement_direction = "LEFT"
             elif event.key == pygame.K_RIGHT and snake.movement_direction != "LEFT":
                 snake.movement_direction = "RIGHT"
-    screen.screen_draw(snake, apple)
-    snake.snake_movement()
     game_logic.eating_an_apple(screen_resolution, snake, apple)
-    if game_logic.collision_with_screen_edge(screen_resolution, snake) == False or \
-            game_logic.collision_snake_with_his_tail(snake) == False:
-        running = False
+    snake.snake_movement()
+    screen.screen_draw(snake, apple)
+    # if game_logic.collision_with_screen_edge(screen_resolution, snake) == False or \
+    #         game_logic.collision_snake_with_his_tail(snake) == False:
+    #     running = False
     pygame.display.flip()
     clock.tick(fps)
 
