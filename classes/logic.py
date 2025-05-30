@@ -10,7 +10,9 @@ class GameLogic:
 
     def eating_an_apple(self, screen_resolution, snake, apple):
         if snake.parts_position[0][0] + 5 == apple.coordinates[0] and snake.parts_position[0][1] + 5 == apple.coordinates[1]:
-            snake.parts_position.insert(1, [snake.parts_position[0][0], snake.parts_position[0][1]])
             apple.new_coordinates(screen_resolution)
+            snake.grow = True
+
+
 
 
