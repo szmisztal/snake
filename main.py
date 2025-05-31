@@ -2,7 +2,6 @@ import pygame
 from classes import drawing, logic, snake_obj, apple_obj
 from config import screen_resolution, fps, running
 
-
 pygame.init()
 clock = pygame.time.Clock()
 
@@ -27,9 +26,9 @@ while running == True:
     game_logic.eating_an_apple(screen_resolution, snake, apple)
     snake.snake_movement()
     screen.screen_draw(snake, apple)
-    # if game_logic.collision_with_screen_edge(screen_resolution, snake) == False or \
-    #         game_logic.collision_snake_with_his_tail(snake) == False:
-    #     running = False
+    if game_logic.collision_with_screen_edge(screen_resolution, snake) == False or \
+            game_logic.collision_snake_with_his_tail(snake) == False:
+        running = False
     pygame.display.flip()
     clock.tick(fps)
 
